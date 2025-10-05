@@ -7,7 +7,7 @@ function Payment() {
 const [site,setSite]=useState([])
 
  const sites=async()=>{
-    const  info= await axios.get("http://localhost:5000/complited_works")
+    const  info= await axios.get("https://json-server-c825.onrender.com/complited_works")
     const data=info.data
     console.log(data);
     setSite(data)
@@ -23,7 +23,7 @@ const handlePayment=async(info)=>{
 
   try{
     const updateSite={...info,Paiment:"paid"}
-    await axios.put(`http://localhost:5000/complited_works/${info.id}`,updateSite)
+    await axios.put(`https://json-server-c825.onrender.com/complited_works/${info.id}`,updateSite)
     sites()
   }catch(err){
     console.error(err);

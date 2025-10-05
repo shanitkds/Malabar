@@ -14,7 +14,7 @@ function BoysInfo() {
 
   const boysinfo = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/users");
+      const res = await axios.get("https://json-server-c825.onrender.com/users");
       const filterData = res.data.filter((u) => u.role == "user" || u.role == "capten");
       setUser(filterData)
       console.log(filterData);
@@ -39,13 +39,13 @@ function BoysInfo() {
   const handilRating = async (info, star) => {
     const ratingUpdate = { ...info, "rating": star }
     //  console.log(ratingUpdate);
-    await axios.put(`http://localhost:5000/users/${Number(info.id)}`, ratingUpdate)
+    await axios.put(`https://json-server-c825.onrender.com/users/${Number(info.id)}`, ratingUpdate)
     boysinfo()
   }
 
   const Delete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/users/${id}`);
+      await axios.delete(`https://json-server-c825.onrender.com/users/${id}`);
       alert("User deleted successfully!")
       boysinfo()
     } catch (error) {

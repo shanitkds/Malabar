@@ -3,7 +3,6 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { BrowserRouter as Router, Routes, Route, BrowserRouter } from "react-router-dom";
-import SiteBokPage from './Component/USERPAGES/SiteBokPage';
 import HomePage1 from './Component/USERPAGES/HomePage1';
 import Login from './Component/Login';
 // import AdminHome from './Component/Admin/AdminHome';
@@ -21,6 +20,7 @@ import Payment from './Component/Admin/Payment';
 import UserPaymentPage from './Component/USERPAGES/UserPaymentPage';
 import UserRating from './Component/User/UserRating';
 import About from './Component/User/About';
+import SiteBookPage from './Component/USERPAGES/SiteBookPage';
 
 
 function App() {
@@ -51,7 +51,7 @@ function App() {
             <Route path='/admin' element={<AdminHomePage />} />
             <Route path='/' element={<Login />} />
             <Route path='/home' element={<HomePage1 />} />
-            <Route path='/sitebook' element={<SiteBokPage />} />
+            <Route path='/sitebook' element={<SiteBookPage/>} />
             <Route path='/history' element={<HistoryPage/>} />
             <Route path='/addboys' element={<AddBoysPage/>} />
             <Route path='/addsite' element={<AddSitePage/>} />

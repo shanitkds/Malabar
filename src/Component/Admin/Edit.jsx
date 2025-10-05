@@ -33,7 +33,7 @@ function Edit() {
         }
 
         try{
-            await axios.put(`http://localhost:5000/users/${Number(id)}`,newData)
+            await axios.put(`https://json-server-c825.onrender.com/users/${Number(id)}`,newData)
             alert("edit complited sussesfuly")
         }catch(err){
             console.error(err);

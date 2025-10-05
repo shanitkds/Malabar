@@ -15,7 +15,7 @@ function AboutSites() {
     const boysInfo = async () => {
         try {
             // const users=await axios.get("http://localhost:5000/users")
-            const bookings = await axios.get("http://localhost:5000/bookings")
+            const bookings = await axios.get("https://json-server-c825.onrender.com/bookings")
             const siteInfo = bookings.data
             const boys = siteInfo.filter((info) => Number(info.siteId) === Number(site.id) &&
                 (info.status === "pending" || info.status === "complited"))
@@ -37,7 +37,7 @@ function AboutSites() {
 
 
 
-            await axios.put(`http://localhost:5000/bookings/${boy.id}`, update)
+            await axios.put(`https://json-server-c825.onrender.com/bookings/${boy.id}`, update)
             boysInfo()
             alert("removed ")
         } catch (error) {
@@ -57,7 +57,7 @@ function AboutSites() {
 
             console.log(siteUpdate);
 
-            await axios.put(`http://localhost:5000/sites/${site.id}`, siteUpdate);
+            await axios.put(`https://json-server-c825.onrender.com/sites/${site.id}`, siteUpdate);
 
         } catch (error) {
             console.error("Error fetching sites:", error);
@@ -77,15 +77,15 @@ function AboutSites() {
 
         try {
 
-            await axios.delete(`http://localhost:5000/sites/${id}`);
+            await axios.delete(`https://json-server-c825.onrender.com/sites/${id}`);
 
-            const res = await axios.get(`http://localhost:5000/bookings?siteId=${id}`)
+            const res = await axios.get(`https://json-server-c825.onrender.com/bookings?siteId=${id}`)
             const bookings = res.data
             console.log(bookings);
 
 
             await bookings.map((books) => (
-                axios.put(`http://localhost:5000/bookings/${books.id}`, { ...books, "status": "canceld" })
+                axios.put(`https://json-server-c825.onrender.com/bookings/${books.id}`, { ...books, "status": "canceld" })
             ))
 
 
@@ -109,16 +109,16 @@ function AboutSites() {
             "Paiment": "pendding"
         }
 
-        await axios.post("http://localhost:5000/complited_works", siteInfo)
+        await axios.post("https://json-server-c825.onrender.com/complited_works", siteInfo)
 
         try {
 
-            await axios.put(`http://localhost:5000/sites/${site.id}`, {
+            await axios.put(`https://json-server-c825.onrender.com/sites/${site.id}`, {
                 ...site,
                 compile: true
             });
 
-            const res = await axios.get(`http://localhost:5000/bookings?siteId=${site.id}`)
+            const res = await axios.get(`https://json-server-c825.onrender.com/bookings?siteId=${site.id}`)
             const bookings = res.data
             console.log(bookings);
 
@@ -127,7 +127,7 @@ function AboutSites() {
 
 
             await PendingBookins.map((books) => (
-                axios.put(`http://localhost:5000/bookings/${books.id}`, { ...books, "status": "completed" })
+                axios.put(`https://json-server-c825.onrender.com/bookings/${books.id}`, { ...books, "status": "completed" })
             ))
 
         } catch (err) {

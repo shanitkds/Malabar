@@ -10,7 +10,7 @@ function ViewSiteInfoAdmin() {
     const navigation=useNavigate()
 
     const siteInfo = async () => {
-        const info = await axios.get("http://localhost:5000/sites")
+        const info = await axios.get("https://json-server-c825.onrender.com/sites")
         const visiblesite=info.data.filter((info)=>info.compile!== true)
         setSits(visiblesite)
     }

@@ -14,7 +14,7 @@ function UserRating() {
 
     const fetchRating = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/users/${user.id}`);
+        const res = await axios.get(`https://json-server-c825.onrender.com/users/${user.id}`);
         setUserRating(res.data);
         console.log(res.data);
         

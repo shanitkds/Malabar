@@ -11,11 +11,11 @@ function UserPaymentHistory() {
 
     const site = async () => {
         try {
-            const arr = await axios.get("http://localhost:5000/complited_works")
+            const arr = await axios.get("https://json-server-c825.onrender.com/complited_works")
             console.log(arr.data);
 
 
-            const my_work = await axios.get('http://localhost:5000/bookings')
+            const my_work = await axios.get('https://json-server-c825.onrender.com/bookings')
             const data = my_work.data
             const filterData = data.filter((a) => a.userId == user.id)
 

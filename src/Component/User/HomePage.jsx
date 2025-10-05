@@ -20,7 +20,7 @@ function HomePage() {
   const FechNotification = async () => {
     try {
 
-      const res = await axios.get("http://localhost:5000/notification")
+      const res = await axios.get("https://json-server-c825.onrender.com/notification")
       const all = res.data
       console.log(res.data);
       // const storId = localStorage.getItem("latestNotificationId")

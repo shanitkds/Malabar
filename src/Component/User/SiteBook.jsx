@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useContext, useEffect, useState } from 'react'
 import { userContext } from '../Contaxt/Context'
 
-function SiteBook() {
+function Sitebook() {
   const [site, setSite] = useState([])
   const [sucess, setSusses] = useState(false)
   const [history, setHistory] = useState([])
@@ -14,7 +14,7 @@ function SiteBook() {
   const fetchSites = async () => {
     if (!user) return;
     try {
-      const res = await axios.get("http://localhost:5000/sites");
+      const res = await axios.get("https://json-server-c825.onrender.com/sites");
       const visiblesite=res.data.filter((info)=>info.compile !== true)
       setSite(visiblesite);
 
@@ -26,7 +26,7 @@ function SiteBook() {
     //THIS IS ONLY FOR FECH RATING FROM JOSN
 
     try{
-      const userNew = await axios.get(`http://localhost:5000/users/${user.id}`)    //this ks onlu for get rating
+      const userNew = await axios.get(`https://json-server-c825.onrender.com/users/${user.id}`)    //this ks onlu for get rating
       const userInfo = userNew.data
       // console.log(userInfo.rating);
       setRating(userInfo.rating)
@@ -78,7 +78,7 @@ function SiteBook() {
     
 
     try {
-      await axios.post("http://localhost:5000/bookings", booking)
+      await axios.post("https://json-server-c825.onrender.com/bookings", booking)
 
       let siteUpdate = { ...siteData, "seats": siteData.seats - 1 }
       // let siteUpdate="hello"
@@ -88,7 +88,7 @@ function SiteBook() {
       // console.log(siteUpdate);
       // console.log(siteData.id);
 
-      await axios.put(`http://localhost:5000/sites/${Number(siteData.id)}`, siteUpdate)
+      await axios.put(`https://json-server-c825.onrender.com/sites/${Number(siteData.id)}`, siteUpdate)
       setSusses(true)
       fetchSites()
       setHistory([...history, booking]);
@@ -106,7 +106,7 @@ function SiteBook() {
     const fechHistory = async () => {
       if (!id) return;
       try {
-        const res = await axios.get(`http://localhost:5000/bookings?userId=${id}`)
+        const res = await axios.get(`https://json-server-c825.onrender.com/bookings?userId=${id}`)
         // console.log(res.data);
         setHistory(res.data)
         // console.log(id);
@@ -237,4 +237,4 @@ const ACCENT_YELLOW = '#ffc107';
   )
 }
 
-export default SiteBook
+export default Sitebook

@@ -15,7 +15,7 @@ function AddBoy() {
 
         while (existing) {
             id = Math.floor(1000 + Math.random() * 9000);
-            const res = await axios.get(`http://localhost:5000/users?id=${id}`)
+            const res = await axios.get(`https://json-server-c825.onrender.com/users?id=${id}`)
             existing = res.data.length > 0;
         }
 
@@ -37,7 +37,7 @@ function AddBoy() {
         }
 
         try {
-            await axios.post("http://localhost:5000/users", Register)
+            await axios.post("https://json-server-c825.onrender.com/users", Register)
             alert("Registrotion complited")
         } catch (err) {
             console.error(err);

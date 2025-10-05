@@ -15,7 +15,7 @@ function AddSite() {
 
         while (existing) {
             id = Math.floor(1000 + Math.random() * 9000);
-            const res = await axios.get(`http://localhost:5000/sites?id=${id}`)
+            const res = await axios.get(`https://json-server-c825.onrender.com/sites?id=${id}`)
             existing = res.data.length > 0;
         }
 
@@ -39,7 +39,7 @@ function AddSite() {
         }
 
         try {
-            await axios.post("http://localhost:5000/sites", Register)
+            await axios.post("https://json-server-c825.onrender.com/sites", Register)
             alert("Site Registrotion complited")
         } catch (err) {
             console.error(err);
@@ -54,7 +54,7 @@ function AddSite() {
         }
 
         try {
-            await axios.post("http://localhost:5000/notification", notification)
+            await axios.post("https://json-server-c825.onrender.com/notification", notification)
         } catch (err) {
             console.log(err);
 

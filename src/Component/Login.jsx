@@ -15,7 +15,7 @@ export default function Login() {
     setError("")
 
     try {
-      const res = await axios.get("http://localhost:5000/users")
+      const res = await axios.get("https://json-server-c825.onrender.com/users")
       const users = res.data
 
       const user = users.find((u) => u.email == email && u.password == password)

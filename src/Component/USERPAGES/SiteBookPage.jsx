@@ -1,16 +1,16 @@
 import React from 'react'
 import NaveBar from '../User/NaveBar'
-import SiteBook from '../User/siteBook'
+import Sitebook from '../User/siteBook'
 import Footer from '../Footer'
 
-function SiteBokPage() {
+function SiteBookPage() {
   return (
     <div>
         <NaveBar/>
-        <SiteBook/>
+        <Sitebook/>
         <Footer/>
     </div>
   )
 }
 
-export default SiteBokPage
+export default SiteBookPage

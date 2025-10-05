@@ -12,7 +12,7 @@ function History() {
         console.log(id);
         const userHistory = async () => {
             try {
-                const hist = await axios.get(`http://localhost:5000/bookings?userId=${id}`)
+                const hist = await axios.get(`https://json-server-c825.onrender.com/bookings?userId=${id}`)
                 console.log(hist.data);
                 setHistors(hist.data)
 
