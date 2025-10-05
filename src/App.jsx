@@ -20,7 +20,8 @@ import Payment from './Component/Admin/Payment';
 import UserPaymentPage from './Component/USERPAGES/UserPaymentPage';
 import UserRating from './Component/User/UserRating';
 import About from './Component/User/About';
-import SiteBookPage from './Component/USERPAGES/SiteBookPage';
+// import SiteBookPage from './Component/USERPAGES/SiteBookPage';
+import Sitebook from './Component/User/siteBook';
 
 
 function App() {
@@ -51,7 +52,7 @@ function App() {
             <Route path='/admin' element={<AdminHomePage />} />
             <Route path='/' element={<Login />} />
             <Route path='/home' element={<HomePage1 />} />
-            <Route path='/sitebook' element={<SiteBookPage/>} />
+            <Route path='/sitebook' element={<Sitebook/>} />
             <Route path='/history' element={<HistoryPage/>} />
             <Route path='/addboys' element={<AddBoysPage/>} />
             <Route path='/addsite' element={<AddSitePage/>} />
