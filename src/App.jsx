@@ -19,7 +19,7 @@ import Payment from './Component/Admin/Payment';
 import UserPaymentPage from './Component/USERPAGES/UserPaymentPage';
 import UserRating from './Component/User/UserRating';
 import About from './Component/User/About';
-import SiteBook from './Component/User/siteBook';
+import SiteBook from './Component/User/SiteBoo'; // ✅ fixed path
 
 
 function App() {
