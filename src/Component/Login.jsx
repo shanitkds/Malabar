@@ -2,6 +2,8 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { userContext } from "./Contaxt/Context";
+import { Link } from 'react-router-dom';
+
 
 export default function Login() {
   const navigate = useNavigate()
@@ -108,15 +110,13 @@ export default function Login() {
 
           <p className="text-center text-sm text-gray-500">
             Don’t have an account?{" "}
-            <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to={whatsappLink}  // use "to" instead of href
               className="hover:underline cursor-pointer font-medium"
               style={{ color: ACCENT_YELLOW }}
             >
               Contact
-            </a>
+            </Link>
           </p>
         </form>
       </div>
