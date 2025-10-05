@@ -3,16 +3,18 @@ import { SiWhatsapp } from "react-icons/si";
 import NaveBar from './NaveBar';
 import { userContext } from '../Contaxt/Context';
 import Footer from '../Footer';
+import { Link } from 'react-router-dom';
+
 
 const About = () => {
     // Replace this number with your Catering Boys WhatsApp number in international format without "+"
     const whatsappNumber = "918129652688"; // Example: 91 for India + mobile number
     const whatsappLink = `https://wa.me/${whatsappNumber}`;
-    const { setTudo} = useContext(userContext)
+    const { setTudo } = useContext(userContext)
 
     return (
         <div >
-            <div><NaveBar/></div>
+            <div><NaveBar /></div>
             <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 pt-22" onClick={() => setTudo(false)}>
                 <div className="max-w-7xl mx-auto">
 
@@ -43,14 +45,12 @@ const About = () => {
                                 />
                             </div>
                             {/* WhatsApp Contact Button */}
-                            <a
-                                href={whatsappLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
+                            <Link
+                                to={whatsappLink}   // internal route like "/contact"
                                 className="absolute -bottom-6 -right-1 p-4 bg-green-500 text-white rounded-full shadow-xl hover:scale-110 transition flex items-center justify-center"
                             >
                                 <SiWhatsapp className="w-8 h-8" />
-                            </a>
+                            </Link>
                         </div>
 
                         <div className="order-2 lg:order-1 space-y-6 sm:space-y-8 text-base sm:text-lg text-gray-700">
@@ -72,7 +72,7 @@ const About = () => {
 
                 </div>
             </div>
-            <div><Footer/></div>
+            <div><Footer /></div>
         </div>
     );
 };
