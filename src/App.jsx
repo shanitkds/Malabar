@@ -5,7 +5,6 @@ import './App.css'
 import { BrowserRouter as Router, Routes, Route, BrowserRouter } from "react-router-dom";
 import HomePage1 from './Component/USERPAGES/HomePage1';
 import Login from './Component/Login';
-// import AdminHome from './Component/Admin/AdminHome';
 import AdminHomePage from './Component/ADMINPAGES/AdminHomePage';
 import HistoryPage from './Component/USERPAGES/HistoryPage';
 import { userContext } from './Component/Contaxt/Context'
@@ -20,8 +19,7 @@ import Payment from './Component/Admin/Payment';
 import UserPaymentPage from './Component/USERPAGES/UserPaymentPage';
 import UserRating from './Component/User/UserRating';
 import About from './Component/User/About';
-// import SiteBookPage from './Component/USERPAGES/SiteBookPage';
-import Sitebook from './Component/User/siteBook';
+import SiteBook from './Component/User/siteBook';
 
 
 function App() {
@@ -52,7 +50,7 @@ function App() {
             <Route path='/admin' element={<AdminHomePage />} />
             <Route path='/' element={<Login />} />
             <Route path='/home' element={<HomePage1 />} />
-            <Route path='/sitebook' element={<Sitebook/>} />
+            <Route path='/sitebook' element={<SiteBook/>} />
             <Route path='/history' element={<HistoryPage/>} />
             <Route path='/addboys' element={<AddBoysPage/>} />
             <Route path='/addsite' element={<AddSitePage/>} />

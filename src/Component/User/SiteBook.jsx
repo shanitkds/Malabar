@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useContext, useEffect, useState } from 'react'
 import { userContext } from '../Contaxt/Context'
 
-function Sitebook() {
+function SiteBook() {
   const [site, setSite] = useState([])
   const [sucess, setSusses] = useState(false)
   const [history, setHistory] = useState([])
@@ -237,4 +237,4 @@ const ACCENT_YELLOW = '#ffc107';
   )
 }
 
-export default Sitebook
+export default SiteBook
