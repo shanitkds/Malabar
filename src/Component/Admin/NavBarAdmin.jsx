@@ -20,12 +20,12 @@ function NavBarAdmin() {
                 <div className="max-w-7xl mx-auto flex justify-between items-center">
 
                     {/* <!-- Logo --> */}
-                    <div className="flex items-center gap-3 cursor-pointer">
+                    <div className="flex items-center gap-3 cursor-pointer" onClick={()=>navigation("/admin")}>
                         <div className="text-2xl font-bold text-blue-500">Ecomars</div>
                     </div>
 
                     {/* <!-- Navigation Links --> */}
-                    <ul className="flex gap-6 max-sm:hidden">
+                    {/* <ul className="flex gap-6 max-sm:hidden">
                         <li className="hover:text-blue-400 cursor-pointer">
                             <NavLink to="/admin">Home</NavLink>
                         </li>
@@ -35,7 +35,7 @@ function NavBarAdmin() {
                         <li className="hover:text-blue-400 cursor-pointer">
                             <NavLink to="/admin">Boys Info</NavLink>
                         </li>
-                    </ul>
+                    </ul> */}
 
                     {/* <!-- User Section --> */}
                     <div className="flex items-center gap-4">
@@ -54,16 +54,16 @@ function NavBarAdmin() {
                         </button>
                     </div>
 
-                    <div className="sm:hidden mt-3 flex justify-end">
+                    {/* <div className="sm:hidden mt-3 flex justify-end">
                         <CiMenuBurger
                             size={28}
                             className="cursor-pointer text-white"
                             onClick={() => setTudo(!tudo)}
                         />
-                    </div>
+                    </div> */}
 
                 </div>
-                {tudo && (
+                {/* {tudo && (
                     <div className="absolute top-16 right-2 w-56 bg-gradient-to-br from-gray-900 to-black border border-gray-700 text-white rounded-xl shadow-xl overflow-hidden animate-slideDown">
                         <ul className="flex flex-col divide-y divide-gray-700">
                             <li className="px-4 py-3 hover:bg-gray-800 cursor-pointer" onClick={() => { navigation("/home"), setTudo(false) }}>Home</li>
@@ -73,7 +73,7 @@ function NavBarAdmin() {
                             <li className="px-4 py-3 hover:bg-gray-800 cursor-pointer">Notifications</li>
                         </ul>
                     </div>
-                )}
+                )} */}
             </nav>
 
         </div>

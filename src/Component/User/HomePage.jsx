@@ -58,7 +58,7 @@ function HomePage() {
   return (
     <div
       
-      className="min-h-screen pt-20 max-sm:pt-10 text-white w-full"
+      className="h-[800px] pt-20 max-sm:pt-10 text-white w-full "
       style={{ backgroundColor: PRIMARY_GREEN }}
       onClick={() => setTudo(false)}
     >
@@ -68,7 +68,7 @@ function HomePage() {
           
           className="text-4xl sm:text-6xl font-extrabold mb-4 text-white"
         >
-          Welcome to Catering Boys
+          Malabar Caterings
         </h1>
         <p
          
