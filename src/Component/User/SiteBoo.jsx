@@ -84,7 +84,7 @@ function SiteBoo() {
 
       let siteUpdate = { ...siteData, "seats": siteData.seats - 1 }
       // let siteUpdate="hello"
-      if (siteUpdate.seats <= 0) {
+      if (siteUpdate.seats < 0) {
         siteUpdate = { ...siteUpdate, available: false }
       }
       // console.log(siteUpdate);
