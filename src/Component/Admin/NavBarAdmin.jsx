@@ -21,7 +21,7 @@ function NavBarAdmin() {
 
                     {/* <!-- Logo --> */}
                     <div className="flex items-center gap-3 cursor-pointer" onClick={()=>navigation("/admin")}>
-                        <div className="text-2xl font-bold text-blue-500">Ecomars</div>
+                        <div className="text-2xl font-bold text-blue-500">Malabar Caterings</div>
                     </div>
 
                     {/* <!-- Navigation Links --> */}

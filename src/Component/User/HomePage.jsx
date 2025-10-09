@@ -6,6 +6,9 @@ import { useNavigate } from 'react-router-dom';
 import { userContext } from '../Contaxt/Context';
 import { FaCreditCard } from "react-icons/fa6";
 import axios from 'axios'
+import { motion } from "framer-motion";
+import 'aos/dist/aos.css';
+
 
 // Define the custom green color for consistency
 const PRIMARY_GREEN = '#004d40'; // Deep Teal-Green (used as BG and accents)
@@ -57,28 +60,38 @@ function HomePage() {
 
   return (
     <div
-      
-      className="h-[800px] pt-20 max-sm:pt-10 text-white w-full "
+      // initial={{ opacity: 0 }}
+      // animate={{ opacity: 1 }}
+      className="h-[800px] max-sm:h-[1100px] pt-20 max-sm:pt-10 text-white w-full "
       style={{ backgroundColor: PRIMARY_GREEN }}
       onClick={() => setTudo(false)}
     >
-      
+
       <div className="flex flex-col items-center justify-center text-center py-20 px-6">
-        <h1
-          
+        <motion.h1
+          initial={{ x: -1100 }}
+          animate={{ x: -10 }}
+          transition={{
+            type: "spring",
+            // stiffness: 500,
+            delay: 0.5,
+            duration: 4
+          }}
           className="text-4xl sm:text-6xl font-extrabold mb-4 text-white"
         >
           Malabar Caterings
-        </h1>
-        <p
-         
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 4 }}
           className="text-lg sm:text-xl max-w-3xl mb-8"
           style={{ color: ACCENT_YELLOW }}
         >
           Book catering staff easily, track your bookings, manage payments, and rate services – **all in one seamless platform.**
-        </p>
+        </motion.p>
         <button
-          
+        data-aos="zoom-out-down"
           className="bg-white px-10 py-3 rounded-xl shadow-2xl font-bold text-lg hover:shadow-lg transition transform hover:-translate-y-0.5"
           style={{ color: PRIMARY_GREEN }}
           onClick={() => navigate("/sitebook")}
@@ -87,17 +100,22 @@ function HomePage() {
         </button>
       </div>
 
-     
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-6 py-12 max-w-7xl mx-auto">
 
-        
+
+      <motion.div
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ type: "spring", stiffness: 200, damping: 8 }}
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-6 py-12 max-w-7xl mx-auto">
+
+
         <div
           
           className="p-6 rounded-2xl bg-white border border-gray-200 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition cursor-pointer text-gray-800"
           onClick={() => navigate("/sitebook")}
         >
           <h2
-            
+
             className="text-xl font-bold mb-3 flex gap-3 items-center"
             style={{ color: PRIMARY_GREEN }}
           >
@@ -106,7 +124,7 @@ function HomePage() {
           <p className="text-gray-600">Book your works now.</p>
         </div>
 
-        
+
         <div
           className="p-6 rounded-2xl bg-white border border-gray-200 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition cursor-pointer text-gray-800"
           onClick={() => navigate("/history")}
@@ -120,7 +138,7 @@ function HomePage() {
           <p className="text-gray-600">View your bookings history.</p>
         </div>
 
-        
+
         <div
           className="p-6 rounded-2xl bg-white border border-gray-200 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition cursor-pointer text-gray-800"
           onClick={() => navigate('/userrating')}
@@ -134,7 +152,7 @@ function HomePage() {
           <p className="text-gray-600">Check your rating.</p>
         </div>
 
-        
+
         <div
           className="p-6 rounded-2xl bg-white border border-gray-200 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition cursor-pointer text-gray-800"
           onClick={() => navigate('/userpayment')}
@@ -147,7 +165,7 @@ function HomePage() {
           </h2>
           <p className="text-gray-600">Check pending payments .</p>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
